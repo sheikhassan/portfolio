@@ -4,8 +4,8 @@ import SectionHeading from './SectionHeading'
 
 export default function Projects() {
   return (
-    <section id="projects" className="scroll-mt-28 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
+    <section id="projects" className="scroll-mt-24 py-16 sm:scroll-mt-28 sm:py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-4 sm:px-5 md:px-8">
         <Reveal>
           <SectionHeading
             number="03"
@@ -18,14 +18,14 @@ export default function Projects() {
         <div className="space-y-6">
           {projects.map((project, index) => (
             <Reveal key={project.id}>
-              <article className="card-hover overflow-hidden rounded-3xl border border-cream-200/10 bg-ink-800/50">
+              <article className="card-hover overflow-hidden rounded-2xl border border-cream-200/10 bg-ink-800/50 sm:rounded-3xl">
                 <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-                  <div className="border-b border-cream-200/10 p-6 md:p-8 lg:border-b-0 lg:border-r">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-gold-400">
+                  <div className="border-b border-cream-200/10 p-5 sm:p-6 md:p-8 lg:border-b-0 lg:border-r">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-gold-400 sm:text-[11px] sm:tracking-[0.18em]">
                       Project 0{index + 1} · {project.eyebrow}
                     </p>
-                    <h3 className="mt-4 font-display text-4xl text-cream-50">{project.name}</h3>
-                    <p className="mt-4 text-lg leading-relaxed text-cream-100/85">{project.oneLiner}</p>
+                    <h3 className="mt-3 font-display text-3xl text-cream-50 sm:mt-4 sm:text-4xl">{project.name}</h3>
+                    <p className="mt-3 text-base leading-relaxed text-cream-100/85 sm:mt-4 sm:text-lg">{project.oneLiner}</p>
                     <div className="mt-6 flex flex-wrap gap-2">
                       {project.stack.map((tech) => (
                         <span
@@ -38,20 +38,20 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <div className="grid gap-px bg-cream-200/10 sm:grid-cols-3">
-                    <div className="bg-ink-800 p-6">
+                  <div className="grid gap-px bg-cream-200/10 lg:grid-cols-3">
+                    <div className="bg-ink-800 p-5 sm:p-6">
                       <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-cream-200/45">
                         The problem
                       </p>
                       <p className="mt-3 text-sm leading-relaxed text-cream-200/80">{project.problem}</p>
                     </div>
-                    <div className="bg-ink-800 p-6">
+                    <div className="bg-ink-800 p-5 sm:p-6">
                       <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-cream-200/45">
                         What I built
                       </p>
                       <p className="mt-3 text-sm leading-relaxed text-cream-200/80">{project.whatIBuilt}</p>
                     </div>
-                    <div className="bg-ink-800 p-6">
+                    <div className="bg-ink-800 p-5 sm:p-6">
                       <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-cream-200/45">
                         How it works
                       </p>

@@ -4,8 +4,8 @@ import SectionHeading from './SectionHeading'
 
 export default function Certification() {
   return (
-    <section id="certification" className="scroll-mt-28 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
+    <section id="certification" className="scroll-mt-24 py-16 sm:scroll-mt-28 sm:py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-4 sm:px-5 md:px-8">
         <Reveal>
           <SectionHeading
             number="04"
@@ -16,14 +16,14 @@ export default function Certification() {
         </Reveal>
 
         <Reveal>
-          <article className="card-hover relative overflow-hidden rounded-3xl border border-gold-400/25 bg-ink-800/70 p-7 shadow-glow md:p-10">
+          <article className="card-hover relative overflow-hidden rounded-2xl border border-gold-400/25 bg-ink-800/70 p-5 shadow-glow sm:rounded-3xl sm:p-7 md:p-10">
             <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-gold-400/10 blur-3xl" />
             <div className="relative grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
               <div>
                 <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-gold-400">
                   {certification.issuer} · {certification.code}
                 </p>
-                <h3 className="mt-3 font-display text-3xl text-cream-50 md:text-4xl">
+                <h3 className="mt-3 font-display text-2xl text-cream-50 sm:text-3xl md:text-4xl">
                   {certification.name}
                 </h3>
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-cream-200/75">

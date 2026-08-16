@@ -11,8 +11,8 @@ const details = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="scroll-mt-28 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
+    <section id="contact" className="scroll-mt-24 py-16 sm:scroll-mt-28 sm:py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-4 sm:px-5 md:px-8">
         <Reveal>
           <SectionHeading
             number="06"
@@ -24,12 +24,12 @@ export default function Contact() {
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
-            <div className="rounded-3xl border border-cream-200/10 bg-ink-800/50 p-7 md:p-8">
+            <div className="rounded-2xl border border-cream-200/10 bg-ink-800/50 p-5 sm:rounded-3xl sm:p-7 md:p-8">
               <h3 className="font-display text-2xl text-cream-50">Direct details</h3>
               <ul className="mt-6 divide-y divide-cream-200/10">
                 {details.map((item) => (
-                  <li key={item.label} className="flex flex-col gap-1 py-4 first:pt-0 last:pb-0 sm:flex-row sm:items-center sm:justify-between">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-cream-200/45">
+                  <li key={item.label} className="flex flex-col gap-1 py-4 first:pt-0 last:pb-0 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                    <span className="shrink-0 font-mono text-[11px] uppercase tracking-[0.16em] text-cream-200/45">
                       {item.label}
                     </span>
                     {item.href ? (
@@ -37,12 +37,12 @@ export default function Contact() {
                         href={item.href}
                         target={item.href.startsWith('http') ? '_blank' : undefined}
                         rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
-                        className="text-cream-50 transition hover:text-gold-300"
+                        className="break-anywhere text-left text-cream-50 transition hover:text-gold-300 sm:text-right"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <span className="text-cream-50">{item.value}</span>
+                      <span className="break-anywhere text-cream-50 sm:text-right">{item.value}</span>
                     )}
                   </li>
                 ))}
@@ -51,12 +51,12 @@ export default function Contact() {
           </Reveal>
 
           <Reveal>
-            <div className="flex h-full flex-col justify-between rounded-3xl border border-gold-400/25 bg-gradient-to-br from-ink-800 to-ink-950 p-7 md:p-8">
+            <div className="flex h-full flex-col justify-between rounded-2xl border border-gold-400/25 bg-gradient-to-br from-ink-800 to-ink-950 p-5 sm:rounded-3xl sm:p-7 md:p-8">
               <div>
                 <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-gold-400">
                   Attached resume
                 </p>
-                <h3 className="mt-3 font-display text-3xl text-cream-50">Hassan S — Resume</h3>
+                <h3 className="mt-3 font-display text-2xl text-cream-50 sm:text-3xl">Hassan S — Resume</h3>
                 <p className="mt-3 text-sm leading-relaxed text-cream-200/70">
                   One-page PDF with experience, projects, skills, certification, and education.
                   Same facts as this site, in a format you can forward.
@@ -66,7 +66,7 @@ export default function Contact() {
                 <a
                   href={profile.resumeFile}
                   download
-                  className="rounded-full bg-gold-400 px-5 py-3 text-center text-sm font-medium text-ink-950 transition hover:bg-gold-300"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-gold-400 px-5 py-3 text-center text-sm font-medium text-ink-950 transition hover:bg-gold-300"
                 >
                   Download PDF resume
                 </a>
@@ -74,7 +74,7 @@ export default function Contact() {
                   href={profile.resumeFile}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-cream-200/20 px-5 py-3 text-center text-sm text-cream-50 transition hover:border-gold-400/50"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-cream-200/20 px-5 py-3 text-center text-sm text-cream-50 transition hover:border-gold-400/50"
                 >
                   Open resume in a new tab
                 </a>

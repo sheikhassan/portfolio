@@ -10,13 +10,13 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-ink-950">
+    <div className="relative min-h-screen overflow-x-clip bg-ink-950">
       <div className="grain" />
       <Navbar />
       <main>
         <Hero />
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <div className="gold-rule mt-20" />
+        <div className="mx-auto max-w-6xl px-4 sm:px-5 md:px-8">
+          <div className="gold-rule mt-12 sm:mt-20" />
         </div>
         <Experience />
         <Skills />

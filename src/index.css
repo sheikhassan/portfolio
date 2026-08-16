@@ -8,16 +8,24 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: clip;
   background: #070706;
   color: #efe7d6;
   font-family: 'DM Sans', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(212, 175, 74, 0.18);
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 ::selection {
@@ -92,8 +100,29 @@ body {
   transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
 }
 
-.card-hover:hover {
-  border-color: rgba(212, 175, 74, 0.35);
-  transform: translateY(-2px);
-  background: rgba(20, 19, 16, 0.9);
+@media (hover: hover) and (pointer: fine) {
+  .card-hover:hover {
+    border-color: rgba(212, 175, 74, 0.35);
+    transform: translateY(-2px);
+    background: rgba(20, 19, 16, 0.9);
+  }
+}
+
+.break-anywhere {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .in-view {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
 }

@@ -8,6 +8,11 @@ export function useInView() {
     const node = ref.current
     if (!node) return undefined
 
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setVisible(true)
+      return undefined
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -15,11 +20,16 @@ export function useInView() {
           observer.unobserve(entry.target)
         }
       },
-      { threshold: 0.16, rootMargin: '0px 0px -40px 0px' },
+      { threshold: 0.06, rootMargin: '0px 0px -8% 0px' },
     )
 
     observer.observe(node)
-    return () => observer.disconnect()
+    const fallback = window.setTimeout(() => setVisible(true), 1400)
+
+    return () => {
+      observer.disconnect()
+      window.clearTimeout(fallback)
+    }
   }, [])
 
   return { ref, visible }
